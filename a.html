@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*   ES6 类语法
+            + 语法 ：
+            class 类名 {
+                //先ES5 内的构造函数体
+                constructor(){}
+                //直接书写原型上的方法即可
+            }
+            
+            +   必须和new关键字连用
+            
+            */
+
+
+
+
+
+
+
+
+        // function Person(name,age){
+        //     this.name = name,
+        //     this.age = age 
+        // }
+        /* 为原型添加方法*/
+        //  原型上面的方法， 为了给实例使用
+        // Person.prototype.say = function(){
+        //     console.log('hello');
+        // }
+        // var p1 = new Person('jack',18)
+        // console.log(p1);
+        // p1.say()
+        // 构造函数本质上还是函数，可以不和NEW连用
+        // var p2 = Person('ROM',18)
+        // console.log(p2);
+        // p2.say()
+
+        //   类的书写
+
+        class Person {
+            // ES5 构造函数体书写
+            constructor(name,age){
+                this.name = name,
+                this.age = age
+            }
+                    // 书写原型上面的方法
+            say(){console.log("hello");}
+
+            //静态属性
+            static a = 100
+            //静态方法
+            static go() {console.log('loading');} 
+        }
+
+        var p1 = new Person('moke',12)
+        console.log(p1)
+        p1.say();
+
+        // 报错 没有和 new 连用
+        // var p2 = Person('los',12)
+        
+
+        // 使用静态属性和静态方法
+        Person.go()
+        console.log(Person.a);
+    </script>
+</body>
+</html>
